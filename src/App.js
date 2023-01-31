@@ -40,9 +40,8 @@ function App() {
       <header className="App-header">
         {isLoading && <img src="https://archives.bulbagarden.net/media/upload/7/79/Dream_Pok%C3%A9_Ball_Sprite.png" alt="pokemon_sprite" className="Pokemon-image"/>}
         {!isLoading && <img src={data.sprites.front_default} alt="pokemon_sprite" className="Pokemon-image"/>}
-        {isLoading && <p>Loading...</p>}
-        {!isLoading && <p><strong>Name</strong> <br/> {Capitalize(data.name)} <br/><br/>
-                          <strong>Id</strong> <br/> {data.id} </p>}
+        <p><strong>Name</strong> <br/> {!isLoading && Capitalize(data.name)} {isLoading && 'Loading...'} <br/><br/>
+        <strong>Id</strong> <br/> {!isLoading && data.id} {isLoading && 'Loading...'} </p>
       <button onClick={handleClick} className="Pokemon-button">Catch'em  all!</button>
       </header>
     </div>
