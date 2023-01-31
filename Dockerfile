@@ -7,7 +7,7 @@ COPY . .
 RUN npm run build
 
 # Final Image
-FROM nginx:1.19.9
+FROM nginx:1.23.3-alpine-slim
 WORKDIR /usr/share/nginx/html
 RUN rm -rf ./*
 COPY --from=builder /app/build .
