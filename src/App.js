@@ -39,8 +39,10 @@ function App() {
     <div className="App">
       <header className="App-header">
         {isLoading && <img src="https://archives.bulbagarden.net/media/upload/7/79/Dream_Pok%C3%A9_Ball_Sprite.png" alt="pokemon_sprite" className="Pokemon-image"/>}
-        {!isLoading && <img src={data.sprites.front_default} alt="pokemon_sprite" className="Pokemon-image"/>}
-        <p><strong>Name</strong> <br/> {!isLoading && Capitalize(data.name)} {isLoading && 'Loading...'} <br/><br/>
+        {!isLoading && <img src={data.sprites.front_default === null 
+          ? data.sprites.other["official-artwork"].front_default
+          : data.sprites.front_default} alt="pokemon_sprite" className="Pokemon-image"/>}
+        <p><strong>Name</strong> <br/> {!isLoading && Capitalize(data.name)} {isLoading && 'Carganding...'} <br/><br/>
         <strong>Id</strong> <br/> {!isLoading && data.id} {isLoading && 'Loading...'} </p>
       <button onClick={handleClick} className="Pokemon-button">Catch'em  all!</button>
       </header>
