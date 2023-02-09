@@ -1,0 +1,10 @@
+version: "3.8"
+
+services:
+  app:
+    container_name: pokemon-react-app
+    image: pokemon-react-app-image
+    build:
+      context: .
+    ports:
+      - 8080:80
