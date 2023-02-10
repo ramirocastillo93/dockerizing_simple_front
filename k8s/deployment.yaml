@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pokemon-image
+spec:
+  selector:
+    matchLabels:
+      app: pokemon-image
+  template:
+    metadata:
+      labels:
+        app: pokemon-image
+    spec:
+      containers:
+      - name: pokemon-image
+        image: ramirocastillo93/pokemon-react-app-image:v0.0.1
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080

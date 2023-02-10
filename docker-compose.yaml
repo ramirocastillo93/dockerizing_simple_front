@@ -3,7 +3,7 @@ version: "3.8"
 services:
   app:
     container_name: pokemon-react-app
-    image: pokemon-react-app-image
+    image: ramirocastillo93/pokemon-react-app-image:v0.0.1
     build:
       context: .
     ports:
