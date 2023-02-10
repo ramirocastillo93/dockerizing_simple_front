@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: pokemon-image
+  name: pokemon-react-app-svc
 spec:
   type: NodePort
   selector:
-    app: pokemon-image
+    app: pokemon-react-app
   ports:
-  - name: pokemon-image
+  - name: pokemon-react-app-svc-port
     port: 8080
     targetPort: 80

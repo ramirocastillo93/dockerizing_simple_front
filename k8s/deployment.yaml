@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: pokemon-image
+  name: pokemon-react-app
 spec:
   selector:
     matchLabels:
-      app: pokemon-image
+      app: pokemon-react-app
   template:
     metadata:
       labels:
-        app: pokemon-image
+        app: pokemon-react-app
     spec:
       containers:
-      - name: pokemon-image
+      - name: pokemon-react-app
         image: ramirocastillo93/pokemon-react-app-image:v0.0.1
         resources:
           limits:
